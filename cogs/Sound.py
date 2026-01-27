@@ -7,7 +7,7 @@ class Sound(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def play(self, ctx):
+    async def Baiacu(self, ctx):
         # 1️⃣ Verifica se o usuário tá numa call
         if not ctx.author.voice:
             await ctx.send("❌ Tu precisa estar numa call pra usar isso 😅")
