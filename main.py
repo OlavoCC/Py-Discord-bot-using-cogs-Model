@@ -9,6 +9,8 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 
 intents = discord.Intents.default()
 intents.message_content = True
+intents.members = True
+
 
 bot = commands.Bot(command_prefix="?", intents=intents)
 
@@ -20,6 +22,7 @@ async def load_cogs():
     for filename in os.listdir("cogs"):
         if filename.endswith(".py") and not filename.startswith("_"):
             await bot.load_extension(f"cogs.{filename[:-3]}")
+            print(f'Loaded cog: {filename}')
 
 async def main():
     await load_cogs()
